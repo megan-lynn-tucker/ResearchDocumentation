@@ -1,0 +1,258 @@
+\documentclass{article}
+
+%\usepackage{tocbibind}
+
+\usepackage[english]{babel}
+\usepackage[a4paper,top=3cm,bottom=3cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{
+\normalfont \normalsize 
+\textsc{Mathematical Modeling} \\ [20pt]
+\huge Modeling Groundwater Movement: \\ Pollution and Saltwater Intrusion
+}
+\author{Megan Lynn Tucker}
+\date{August 15, 2018}
+
+%_____________________________________________________________________________
+
+\setlength {\marginparwidth }{2cm}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\section*{Abstract}
+Analyzing brine and saltwater movement in groundwater systems can help analyze many important environmental problems: 
+disposing toxic or radioactively hazardous waste in crystalline or salt rock formations, 
+leachates from landfills and industrial waste disposals infiltrating the water table\cite{1}, 
+saltwater intrusion in costal aquifers pumped below sea level\cite{2} or in aquifers located above salt formations\cite{3}. 
+These are all examples of groundwater pollution. 
+Groundwater pollution is the deterioration of water quality resulting from human activities\cite{4}. 
+
+\section*{Introduction}
+Groundwater pollution is usually caused by one of four sources: domestic, industrial, agricultural, or environmental. 
+Domestic pollution may be caused by sewers breaking, septic tanks percolating into the ground, rain infiltrating through landfills, artificially recharging aquifers using sewage water, or biological contaminants. 
+Industrial pollution may also be caused by the sewage disposal system breaking. 
+The difference between this and domestic pollution is that heavy metals, radioactive materials, or various non-deteriorating highly toxic compounds may also be part of the waste. 
+Agricultural pollution caused by irrigation and rain water dissolving and transporting fertilizers, salts, herbicides, and pesticides into the aquifer. 
+Environmental pollution is caused by the environment where the groundwater comes from.
+For example, water may flow through and dissolve carbonate rocks.
+Alternatively, saltwater encroachment or intrusion may occur when the equilibrium between seawater and freshwater is disturbed \cite{5}.
+
+Saltwater encroachment can result from many things.
+It occurs most often when ground-water heads are artificially lowered. 
+Near the coast, fresh groundwater is discharged into the ocean or estuaries containing brackish water, a mixture of saltwater and freshwater\cite{2}. 
+Many inland aquifers are bounded below by deep saltwater pockets\cite{3}. 
+If saltwater intrudes into the freshwater groundwater system, the water can become permanently contaminated and unpotable for humans.
+
+The relationship between freshwater and saltwater is primarily based on their different densities (mass per unit volume). 
+The density of freshwater is approximately 1g/$cm^3$ compared to the density of saltwater, 1.025 g/$cm^3$. 
+Because it is less dense, freshwater typically sits at the surface.
+Under stable conditions the boundary between the two layers remains at equilibrium. 
+The boundary is typically a gradient from freshwater to saltwater. 
+This is called either the zone of diffusion, zone of dispersion, or transition zone. 
+If an aquifer lies near saline groundwater, pumping from it will move the boundary. 
+If moved far enough, the well may become contaminated with salt. 
+How much the saltwater moves and at what speed is determined by the location and magnitude of groundwater withdrawals with respect to the location of the $saltwater^3$.
+
+\section*{Main Results}
+Most models for the flow of groundwater contaminants are only accurate for small amounts of contaminants. 
+Oftentimes the concentration of solvents is so low the effects on density may be ignored. 
+However, there are sometimes situations where groundwater with a high salt concentration is encountered. 
+A model for solutions with higher concentrations of contaminants was found using a more generalized form of Darcy’s and Fick’s laws\cite{1}. 
+Darcy's law is 
+    \begin{align}
+        Q= - \frac{KA\Delta p}{\mu L}
+    \end{align}
+\noindent where Q is the total discharge of fluid in $m^3$/s, K is the hydraulic conductivity of the medium measured in $m^2$, A is the cross-sectional area to flow, $\Delta$p is the total pressure drop in Pascals, $\mu$ is the viscosity in Pascal seconds, and L is the length over which the pressure drop occurs. 
+
+Fick's first law is commonly used to describe systems containing contaminants.
+It describes molecular diffusion which is caused by thermal kinetic energy causing solute molecules to have random motion. 
+Fick's first law assumes steady state—the system is unchanged over time—and relates the dispersion of solutes to their concentration for two or more dimensions. 
+The diffusion coefficient for a porous medium is smaller than that of a pure liquid because there are collisions with pore walls. 
+Fick's law is 
+    \begin{align}
+        J = - D[\nabla(nC) + \frac{t}{V}] 
+    \end{align} 
+\noindent where V is a chemical averaging volume, n is the porosity of the medium, and t is the tortuosity of the medium. J is the diffusion flux vector which measures the amount of substance which will flow through a unit area during a unit time interval, D is the diffusion coefficient or diffusivity, C is the mass concentration of the contaminant, usually salt, and x is the position. 
+Note that $\nabla$C denotes the gradient of C.
+This is a generalized form of the first derivative. 
+For practical application, Fick's law may be simplified to 
+    \begin{align}
+        J = - Dn\nabla C
+    \end{align}
+\noindent where D is the bulk diffusion constant. 
+Oftentimes, Fick's law is further simplified to:
+    \begin{align}
+        J = - D\nabla C.
+    \end{align}
+
+When modeling systems of a fluid containing contaminants, these two equations are used in the following manner:
+    \begin{align}
+        Q = - \frac{K}{\mu}(\Delta p - \rho g)
+    \end{align}
+    \begin{align}
+        J =- D\nabla C.
+    \end{align}
+\noindent Here, q is the mean velocity of the fluid, k is again the hydraulic conductivity, $\rho$ and $\mu$ are mass density and dynamic viscosity of the fluid, p is the pressure, g is the gravity vector, J is the diffusion flux of salt, D is the dispersion tensor, and C is the mass concentration of the contaminant, usually salt\cite{4}. 
+The dispersion tensor is often assumed to be independent of $\nabla$C.
+It is described by 
+    \begin{align}
+        D = (nD_{0} + \alpha \tau q)I + (\alpha^{}_{L} - \alpha^{}_{T})\frac{\textbf{qq}}{q}
+    \end{align}
+\noindent where n is the porosity, $D_0$ is the effective molecular diffusion coefficient,$\alpha^{}_{L}$ and$\alpha^{}_{T}$ are the longitudinal and transversal dispersivities, \textbf{q} is the apparent mean velocity of fluid with respect to the rock, q is the magnitude, and I is the unit tensor\cite{5}.
+
+In three dimensions, Darcy's law is generalized to 
+    \begin{align}
+        Q = -K\nabla \varphi
+    \end{align}
+\noindent where $\varphi$ represents the piezometric head, the sum of the potential energy and the pressure energy per unit weight of water. 
+It is defined by $\varphi$ = z + p/$\gamma$.
+Here z represents the elevation of the point, p the pressure, and $\gamma$ the volumetric weight of the water\cite{6}. 
+Therefore, we could rewrite the above equation as 
+    \begin{align}
+        Q = -K\nabla(z + \frac{p}{\gamma})
+    \end{align}
+\noindent where $\nabla$ (z + p/$\gamma$) is the gradient of $\varphi$.
+
+Note that if we were modeling the motion of a fluid containing N different contaminants, in general, we would require N + 1 sets of equations\cite{4}. 
+Therefore, it is prudent to assume a binary system with a single solute and a single solvent.	
+
+\subsection*{Variations}
+Let us examine the simplified equations of Darcy's and Fick's Laws:
+    \begin{align}
+        Q = -K\nabla\varphi
+    \end{align}
+    \begin{align}
+        J =- D\nabla C.
+    \end{align}
+These equations describe motion in three dimensions.
+Therefore it is prudent to simplify them to one dimension. 
+So, instead of taking the gradient, which involves partial derivatives, we simply take one derivative in terms of time.
+This yields
+    \begin{align}
+        Q = -K\frac{d}{dx}\varphi
+    \end{align}
+    \begin{align}
+        J =- D\frac{d}{dx}C
+    \end{align}
+\noindent where the variables remain the same. 
+The derivative is taken in terms of x, as we suppose we are in a one dimensional horizontal plane. 
+We can move the derivatives to the right side of the equation and divide by the other variable, giving us
+    \begin{align}
+        \frac{d\varphi}{dx} = -\frac{Q}{K}
+    \end{align}
+    \begin{align}
+        \frac{dC}{dx} = -\frac{J}{D}.
+    \end{align}
+\noindent Recall $\varphi$ is the sum of the potential energy and pressure energy, Q is the total discharge of the fluid, K is the hydraulic conductivity, C is the concentration, J is the chemical mass flux, and D is the diffusion constant.
+
+Let us now show that the concentration of contaminants in the fluid neither increases nor decreases as the water flows through the ground. 
+Note that here we are working with two dimensions, time and the horizontal direction. 
+Again recall that $\rho$ is the mass density of the fluid. 
+We have that 
+    \begin{align}
+        c = \int_{a}^{b} \rho (x,t) dx
+    \end{align}
+\noindent where a and b are two points along which the water flows in a horizontal direction. 
+If the fluid flows straight and is not diverted, then the concentration between x = a and x = b may still change in time as fluid leaves at point b and enters at point a. 
+If we assume no contaminant is created or destroyed in between, there can only be changes in concentration between x = a and x = b. 
+
+We may generalize the above equation by examining situations where the sum of the potential energy and pressure energy are not constant:
+    \begin{align}
+        \frac{dc}{dt} = \varphi (a,t) - \varphi (b,t).
+    \end{align}
+\noindent Note that $\varphi$(a,t) and $\varphi$(b,t) represents the sum of the potential energy and pressure energy at some horizontal positions a and b at time t.
+
+We may combine the two above equations into
+    \begin{align}
+        \int_{a}^{b} \rho (x,t) dx = \varphi (a,t) - \varphi (b,t).
+    \end{align}
+\noindent This equation is called a conservation law in integral form, or, an integral conservation law. 
+This law expresses the idea that changes in the concentration of the contaminant are only caused the flow across the boundary between x = a and x = b.
+That is, the contaminant is neither created nor destroyed and its concentration is preserved. 
+However, this does not mean the concentration remains the same between x = a and x = b. 
+If that were true, the integral would equal zero.
+
+We may express the above equation as a local conservation law which is valid at any point in the water flow. 
+This may be done one of three ways, but for the sake of brevity, only one will be described. 
+Note that in all three derivations, we assume all functions are continuous functions of x and t. 
+Furthermore, in the above equation, the full derivative must be replaced with the partial derivative with respect to time.
+Besides that, the equation remains the same. 
+We write the equation as
+    \begin{align}
+        \varphi (a,t) - \varphi (b,t) = -\int_{a}^{b} \frac{\partial}{\partial x}[\rho (x,t)] dx.
+    \end{align}
+\noindent We may then take the derivative with respect to b:
+    \begin{align}
+        \int_{a}^{b} \frac{\partial \rho (x,t)}{\partial x} + \frac{\partial \varphi (x,t)}{\partial x} dx = 0.
+    \end{align}
+\noindent This equation states that the definite integral is always zero regardless of the input values. This is only true for the zero function. Therefore, 
+    \begin{align}
+        \frac{\partial \rho}{\partial x} + \frac{\partial \varphi}{\partial x} = 0.
+    \end{align}
+\noindent is the local conservation law\cite{7}.
+
+\section*{Conclusion}
+Obviously, these models would be of much greater use if they were in the third dimension. 
+Furthermore, we only considered the possibility of having one contaminant. 
+Often, there are multiple contaminants in a water sample. 
+Similarly, aquifers are rarely constructed of a single material, so the permeability of the medium likely changes as the fluid passes through the ground. 
+Lastly, as the fluid travels past rocks and sediment, it can wear away the minerals.
+This further contaminates the water and changes the porosity of the material. 
+A good model for the movement of contaminated groundwater would contain several different variables and functions to account for this. 
+
+Similar work may model specific instances of contaminated water flowing into an aquifer—runoff from a landfill, saltwater intrusion, or fertilizers entering the water system. 
+The effects of diluting the contaminant may also be of interest.
+In surface water systems, humans previously diluted the waste to the point that their affects on the ecosystems were negligible. 
+Perhaps diluting a polluted aquifer enough could restore the use of that aquifer. 
+The time required for fluid to percolate through the aquifer determines the time required for the contaminant to be diluted. 
+Similarly, the time and concentration of contaminants required to permanently damage an aquifer may be calculated. 
+
+\pagebreak
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{99}
+
+\bibitem{1}
+Kolditz, O., Ratke, R., Diersch, H. G., \& Zielke, W.
+\textit{Coupled groundwater flow and transport: 1. Verification of variable density flow and transport models}
+Advances in Water Resources, \textbf{21} No.1, (1998), pp. 27-46
+
+\bibitem{2}
+Heath, Ralph C. 
+\textit{Basic ground-water hydrology}
+U.S . Geological Survey Water-Supply Paper, \textbf{2220} No.86, (1983), pp. 12-26, 83
+
+\bibitem{3}
+Alley, W. M., Reilly, T. E., \& Franke, O. L. 
+\textit{Sustainability of ground-water resources}
+Denver, CO: U.S. Dept. of the Interior, U.S. Geological Survey.
+
+\bibitem{4}
+Hassanizadeh, S. M., \& Leijnse, T. 
+\textit{On the modeling of brine transport in porous media}
+Water Resources Research, \textbf{24} No.3, (1988), pp. 321-330
+
+\bibitem{5}
+Hassanizadeh, S. M., \& Leijnse, T. 
+\textit{A non-linear theory of high-concentration-gradient dispersion in porous media}
+Advances in Water Resources, \textbf{18} No.4, (1995), pp. 203-215
+
+\bibitem{6}
+Bear, J., \& Verruijt, A.
+\textit{Modeling Groundwater Flow and Pollution (Theory and Applications of Transport in Porous Media)}
+Advances in Water Resources, Dordrecht: Reidel
+
+\bibitem{7}
+Haberman, R.
+\textit{Mathematical models: Mechanical vibrations, population dynamics, and traffic flow: An introduction to applied mathematics.}
+Philadelphia, PA: SIAM (1998)
+
+\end{thebibliography}
+
+\end{document}
