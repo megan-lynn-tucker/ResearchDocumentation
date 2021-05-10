@@ -1,5 +1,5 @@
 # ResearchDocumentation
-A collection of writing samples for different research projects.
+A collection of writing samples for different research projects completed during college.
 
 ## Topological Entropy and Metric Entropy
 This paper, written in [LaTeX](https://github.com/megan-lynn-tucker/ResearchDocumentation/blob/master/Topological%20Entropy%20and%20Metric%20Entropy.tex), summarizes my final project for MTH 321: Introduction to Mathematical Software.
