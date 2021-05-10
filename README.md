@@ -18,4 +18,4 @@ The groundwater was assumed to contain contaminants, complicating the model.
 This paper was composed using [LaTeX](https://github.com/megan-lynn-tucker/ResearchDocumentation/blob/master/Modeling%20Groundwater%20Movement.tex).
 
 ## Research Report Memo
-For WR 327: Technical Writing, I composed a brief memo describing research resources for physicists studying helium reactors.
+This memo, composed for WR 327: Technical Writing, describes research resources for physicists studying helium reactors.
